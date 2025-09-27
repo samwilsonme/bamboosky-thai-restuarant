@@ -1,10 +1,12 @@
 ---
+// Homepage
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
 import Hero from '../components/hero/hero-homepage.astro';
 import Content from '../components/content/content-homepage.astro';
-import Social from '../components/social/social.astro';
+import Showcase from '../components/showcase/showcase-homepage.astro'
+import Social from '../components/social/social.astro'
 
 ---
 
@@ -12,6 +14,7 @@ import Social from '../components/social/social.astro';
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>
+		<Showcase />
 		<Social />
 	</Navbar>
 </Layout>

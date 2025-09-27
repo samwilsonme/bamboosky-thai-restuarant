@@ -1,18 +1,19 @@
 ---
+// Content Homepage Component
 const theme = Astro.props.theme;
 ---
 
 <section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
   <div class="py-16">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
         <div>
           <div class="max-w-prose md:max-w-none">
-            <h2 class="text-3xl font-bold text-base-content">
+            <h2 class="text-3xl font-bold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
 
-            <p class="text-base-content/80 mt-4">
+            <p class="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque saepe
               architecto maiores repudiandae amet perferendis repellendus, reprehenderit voluptas
               sequi.

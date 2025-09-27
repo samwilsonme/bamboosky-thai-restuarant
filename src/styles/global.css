@@ -75,6 +75,7 @@
 :root {
   --box-size: 100%;
   --border-thickness: 20px;
+  --section-border-thickness: 20px;
 }
 
 /* Decorative Border Styles - Top and Bottom Only */
@@ -104,4 +105,34 @@
 .bamboosky-border::after {
   bottom: 0;
   background-position: 0 calc(var(--border-thickness) * -1);
+}
+
+
+/* Decorative Border Styles - All Four Sides */
+.section-bamboosky-border {
+  background-color: var(--color-primary);
+  background-image: radial-gradient(var(--color-base-100) 70%, transparent 30%);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  position: relative;
+  z-index: 1;
+  /* Match height of left side content */
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  padding: 20px;
+}
+
+.section-bamboosky-border::before {
+  content: "";
+  display: block;
+  background-color: var(--color-base-100);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: -1;
+  border-radius: inherit;
 }
