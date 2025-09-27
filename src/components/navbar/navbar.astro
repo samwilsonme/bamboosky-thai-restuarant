@@ -1,43 +1,44 @@
-<!-- Sticky Navbar -->
-<div class="sticky top-0 z-20 w-full">
-  <div class="navbar bg-base-300 w-full">
-
-    <div class="mx-2 flex-1 px-2">Navbar Title</div>
-    <div class="hidden flex-none lg:block">
-      <ul class="menu menu-horizontal">
-        <!-- Navbar menu content here -->
-        <li><a>Navbar Item 1</a></li>
-        <li><a>Navbar Item 2</a></li>
-      </ul>
-    </div>
-    <div class="flex-none lg:hidden">
-      <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block h-6 w-6 stroke-current"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </label>
-    </div>
-  </div>
-</div>
-
 <!-- Drawer Structure -->
 <div class="drawer drawer-end">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    <!-- Page content goes here -->
+    <!-- Sticky Navbar -->
+    <div class="sticky top-0 z-50 w-full" data-theme="bamboosky-blue">
+      <div class="navbar bg-base-100 container mx-auto">
+        <div class="flex-1">Navbar Title</div>
+        <div class="hidden flex-none lg:block">
+          <ul class="menu menu-horizontal gap-1">
+            <!-- Navbar menu content here -->
+            <li><a class="btn btn-ghost">Navbar Item 1</a></li>
+            <li><a class="btn btn-ghost">Navbar Item 2</a></li>
+            <li><a class="btn btn-primary">Navbar Item 3</a></li>
+          </ul>
+        </div>
+        <div class="flex-none lg:hidden">
+          <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block h-6 w-6 stroke-current"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Page content slot goes here -->
+    <slot />
   </div>
 
-  <div class="drawer-side z-30">
+  <div class="drawer-side z-40">
     <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu bg-base-200 min-h-full w-80 p-4">
       <!-- Sidebar content here -->
@@ -46,3 +47,27 @@
     </ul>
   </div>
 </div>
+
+<style>
+  .navbar-container {
+    transition: 
+      --color-base-100 300ms ease,
+      --color-primary 300ms ease,
+      --color-accent 300ms ease;
+  }
+</style>
+
+<script>
+  // Add scroll event listener to change navbar theme
+  window.addEventListener('scroll', () => {
+    const navbarContainer = document.querySelector('.sticky.top-0.z-50.w-full');
+    
+    if (navbarContainer) {
+      if (window.scrollY > 50) {
+        navbarContainer.setAttribute('data-theme', 'bamboosky-creme');
+      } else {
+        navbarContainer.setAttribute('data-theme', 'bamboosky-blue');
+      }
+    }
+  });
+</script>

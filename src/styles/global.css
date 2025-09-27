@@ -26,9 +26,9 @@
   --color-warning-content: oklch(41% 0.112 45.904);
   --color-error: oklch(70% 0.191 22.216);
   --color-error-content: oklch(39% 0.141 25.723);
-  --radius-selector: 2rem;
-  --radius-field: 2rem;
-  --radius-box: 2rem;
+  --radius-selector: 1rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
   --size-selector: 0.3125rem;
   --size-field: 0.3125rem;
   --border: 2px;
@@ -62,9 +62,9 @@
   --color-warning-content: oklch(41% 0.112 45.904);
   --color-error: oklch(70% 0.191 22.216);
   --color-error-content: oklch(39% 0.141 25.723);
-  --radius-selector: 2rem;
-  --radius-field: 2rem;
-  --radius-box: 2rem;
+  --radius-selector: 1rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
   --size-selector: 0.3125rem;
   --size-field: 0.3125rem;
   --border: 2px;
@@ -72,3 +72,36 @@
   --noise: 0;
 }
 
+:root {
+  --box-size: 100%;
+  --border-thickness: 20px;
+}
+
+/* Decorative Border Styles - Top and Bottom Only */
+.bamboosky-border {
+  position: relative;
+  z-index: 1;
+}
+
+.bamboosky-border::before,
+.bamboosky-border::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--border-thickness);
+  background-color: var(--color-primary);
+  background-image: radial-gradient(var(--color-base-100) 70%, transparent 30%);
+  background-size: calc(var(--border-thickness) * 2) calc(var(--border-thickness) * 2);
+  z-index: 1;
+}
+
+.bamboosky-border::before {
+  top: 0;
+  background-position: 0 0;
+}
+
+.bamboosky-border::after {
+  bottom: 0;
+  background-position: 0 calc(var(--border-thickness) * -1);
+}

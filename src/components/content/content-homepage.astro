@@ -1,0 +1,33 @@
+---
+const theme = Astro.props.theme;
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold text-base-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h2>
+
+            <p class="text-base-content/80 mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque saepe
+              architecto maiores repudiandae amet perferendis repellendus, reprehenderit voluptas
+              sequi.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="rounded-box"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
