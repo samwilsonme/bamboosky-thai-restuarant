@@ -1,0 +1,36 @@
+<button class="btn btn-lg btn-wide" onclick="book_table_modal.showModal()">Book Table</button>
+
+<dialog id="book_table_modal" class="modal">
+  <div class="modal-box relative">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">x</button>
+    </form>
+
+    <h3 class="text-lg font-bold mb-4">Book a Table</h3>
+
+    <!-- Widget container -->
+    <div id="book-table-widget" class="flex justify-center items-center"></div>
+
+    <!-- Load widget assets -->
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://onsass.designmynight.com/?background-color=%23FFFFFF&primary-color=%236DA8A6&body-text-color=%23000000&outer-border-color=gray"
+    >
+
+    <script is:inline>
+      // Ensure the widget script only loads once
+      if (!document.querySelector('script[src*="bookings-partner.min.js"]')) {
+        const script = document.createElement("script");
+        script.src = "//widgets.designmynight.com/bookings-partner.min.js";
+        script.setAttribute("dmn-booking-form", "true");
+        script.setAttribute("venue", "68483baa2394b18ed04ef5ab");
+        script.setAttribute("hide-offers", "false");
+        script.setAttribute("hide-powered-by", "false");
+        script.setAttribute("search-venues", "false");
+        script.setAttribute("monday-first", "true");
+        document.getElementById("book-table-widget").appendChild(script);
+      }
+    </script>
+  </div>
+</dialog>

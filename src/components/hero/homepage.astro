@@ -1,0 +1,57 @@
+---
+import BookTableModal from '../modal/book_table.astro';
+import BookDomeModal from '../modal/book_dome.astro';
+---
+
+<div class="hero min-h-screen relative">
+  <!-- Video overlay with mask effect -->
+  <div class="video-overlay" style="--mask-image: url('/bamboosky.svg');">
+    <video 
+      class="w-full h-full object-cover" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      webkit-playsinline
+      x5-playsinline
+      preload="auto"
+    >
+      <source src="/bambooskychef.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Hero content with buttons below the video -->
+  <div class="flex gap-4 mt-100 justify-center">
+    <BookTableModal />
+    <BookDomeModal />
+  </div>
+
+</div>
+
+<style>
+
+  .video-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 50vh;
+    -webkit-mask-image: var(--mask-image);
+    mask-image: var(--mask-image);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  /* Ensure video covers the full container */
+  .video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+</style>
