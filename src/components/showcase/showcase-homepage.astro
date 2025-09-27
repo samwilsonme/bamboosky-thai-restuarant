@@ -3,13 +3,17 @@
 const theme = Astro.props.theme;
 
 import Heading from '../heading/heading.astro';
+
+import showcaseImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_2_ymnvqz65.jpg';
+import showcaseImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_26_b7sddu8i.jpg';
+import showcaseImage3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_36_9ibs2olx.jpg';
 ---
 
 <section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
   
   <Heading 
-    title="Authentic Thai Cuisine" 
-    description="Experience the rich flavors and traditions of Thailand in our warm, welcoming restaurant."
+    title="Experience Bamboo Sky" 
+    description="From bright skies to starlit evenings, this is the place for exquisite Thai food, botanical brews, uplifting vibes, & stolen moments away from it all."
     variant="centered"
   />
 
@@ -23,14 +27,14 @@ import Heading from '../heading/heading.astro';
         <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
           <div class="sm:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={showcaseImage1.src}
               class="rounded-box w-full aspect-square object-cover"
               alt=""
             />
           </div>
           <div class="sm:w-1/2 p-6 flex flex-col justify-center">
-            <h3 class="text-2xl font-semibold mb-2">Amazing Feature</h3>
-            <p class="">Discover our exceptional quality and authentic flavors that make us unique.</p>
+            <h3 class="text-2xl font-semibold mb-2">By Day,</h3>
+            <p class="">Bamboo Sky is a calm, welcoming space to work, wander, and gather with friends.</p>
           </div>
         </div>
 
@@ -38,14 +42,14 @@ import Heading from '../heading/heading.astro';
         <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
           <div class="sm:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={showcaseImage2.src}
               class="rounded-box w-full aspect-square object-cover"
               alt=""
             />
           </div>
           <div class="sm:w-1/2 p-6 flex flex-col justify-center">
-            <h3 class="text-xl font-semibold mb-2">Premium Service</h3>
-            <p class="">Experience top-notch service with our dedicated team of professionals.</p>
+            <h3 class="text-2xl font-semibold mb-2">By Night,</h3>
+            <p class="">Bamboo Sky transforms into a magical setting for <a href="/domes" class="link link-hover">date nights</a>, <a href="/food" class="link link-hover">feasts</a>, and <a href="/events" class="link link-hover">celebrations</a>.</p>
           </div>
         </div>
         
@@ -58,7 +62,7 @@ import Heading from '../heading/heading.astro';
             <!-- Image on top -->
             <div class="px-8 pt-8">
               <img
-                src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={showcaseImage3.src}
                 class="rounded-box w-full h-64 object-cover"
                 alt=""
               />
@@ -66,16 +70,15 @@ import Heading from '../heading/heading.astro';
             
             <!-- Text and button below -->
             <div class="px-8 pb-8 flex-1 flex flex-col justify-center text-center">
-              <h2 class="text-3xl font-bold mb-4">Welcome to Our Restaurant</h2>
+              <h2 class="text-3xl font-bold mb-4">Welcome to our Home</h2>
               <p class="text-lg mb-6 leading-relaxed">
-                Experience the finest in authentic cuisine with our carefully crafted menu and warm hospitality. 
-                We pride ourselves on delivering exceptional dining experiences that will create lasting memories.
+                Come for an hour, stay for the day, or let Bamboo Sky be the backdrop to your happily ever after.
               </p>
               
               <!-- Button -->
-              <button class="btn btn-primary font-semibold">
-                Explore Menu
-              </button>
+              <a href="/weddings" class="btn btn-primary font-semibold uppercase">
+                Find out about Weddings
+              </a>
             </div>
           </div>
         </div>
