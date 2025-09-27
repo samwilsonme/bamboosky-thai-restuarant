@@ -3,21 +3,25 @@
 const theme = Astro.props.theme;
 import Heading from '../heading/heading.astro';
 
+import bethImage from '../../assets/images/bamboosky-thai-restuarant-cambridge_18_su3wqspa.jpg';
+import sadieImage from '../../assets/images/bamboosky-thai-restuarant-cambridge_58_tmgdp1k1.jpg';
+import leanneImage from '../../assets/images/bamboosky-thai-restuarant-cambridge_69_nijspi4m.jpg';
+
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    quote: "Amazing Thai food! The flavors are authentic and the service is excellent.",
-    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    name: "Beth Walliker",
+    quote: "A fantastic meal in a beautiful location. Could not fault this at all, authentic and high quality ingredients, would highly recommend a visit.",
+    image: bethImage.src
   },
   {
-    name: "Mike Chen",
-    quote: "Best pad thai in the city. Highly recommend this place to everyone!",
-    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    name: "Sadie Minton",
+    quote: "The decor was pretty with cosy lighting. Highly recommend this Thai restaurant. The desserts were amazing!",
+    image: sadieImage.src
   },
   {
-    name: "Emily Rodriguez",
-    quote: "The atmosphere is wonderful and the food is absolutely delicious.",
-    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    name: "Leanne Thompson",
+    quote: "Lovely restaurant really beautifully decorated. The food was super delicious as well. Looking forward to a return visit!",
+    image: leanneImage.src
   }
 ];
 ---
@@ -25,8 +29,7 @@ const testimonials = [
 <section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
 
   <Heading 
-    title="Authentic Thai Cuisine" 
-    description="Experience the rich flavors and traditions of Thailand in our warm, welcoming restaurant."
+    title="Testimonials"
     variant="centered"
   />
 
@@ -39,7 +42,11 @@ const testimonials = [
             <img src={testimonials[0].image} alt={testimonials[0].name} class="w-full h-full object-cover" />
           </div>
           <div class="text-center">
-            <div class="text-4xl mb-2">"</div>
+            <div class="flex justify-center mb-2 text-bamboosky-gold">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
             <h3 class="card-title text-lg justify-center mb-2">{testimonials[0].name}</h3>
             <p class="mb-4">{testimonials[0].quote}</p>
             <div class="rating rating-md justify-center gap-1">
@@ -61,7 +68,11 @@ const testimonials = [
             <img src={testimonials[1].image} alt={testimonials[1].name} class="w-full h-full object-cover" />
           </div>
           <div class="text-center md:order-1 md:mb-8">
-            <div class="text-4xl mb-2">"</div>
+            <div class="flex justify-center mb-2 text-bamboosky-gold">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
             <h3 class="card-title text-lg justify-center mb-2">{testimonials[1].name}</h3>
             <p class="mb-4">{testimonials[1].quote}</p>
             <div class="rating rating-md justify-center gap-1">
@@ -82,7 +93,11 @@ const testimonials = [
             <img src={testimonials[2].image} alt={testimonials[2].name} class="w-full h-full object-cover" />
           </div>
           <div class="text-center">
-            <div class="text-4xl mb-2">"</div>
+            <div class="flex justify-center mb-2 text-bamboosky-gold">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
             <h3 class="card-title text-lg justify-center mb-2">{testimonials[2].name}</h3>
             <p class="mb-4">{testimonials[2].quote}</p>
             <div class="rating rating-md justify-center gap-1">
