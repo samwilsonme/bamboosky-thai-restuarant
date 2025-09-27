@@ -1,0 +1,100 @@
+---
+// Testimonials data
+const theme = Astro.props.theme;
+import Heading from '../heading/heading.astro';
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    quote: "Amazing Thai food! The flavors are authentic and the service is excellent.",
+    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "Mike Chen",
+    quote: "Best pad thai in the city. Highly recommend this place to everyone!",
+    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "Emily Rodriguez",
+    quote: "The atmosphere is wonderful and the food is absolutely delicious.",
+    image: "https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+];
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+
+  <Heading 
+    title="Authentic Thai Cuisine" 
+    description="Experience the rich flavors and traditions of Thailand in our warm, welcoming restaurant."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Left Column -->
+      <div class="card">
+        <div class="card-body">
+          <div class="w-full aspect-square mb-4 rounded-box overflow-hidden">
+            <img src={testimonials[0].image} alt={testimonials[0].name} class="w-full h-full object-cover" />
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-2">"</div>
+            <h3 class="card-title text-lg justify-center mb-2">{testimonials[0].name}</h3>
+            <p class="mb-4">{testimonials[0].quote}</p>
+            <div class="rating rating-md justify-center gap-1">
+              <input type="radio" name="rating-1" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="mask mask-star-2" checked />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Column -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Image first on mobile, text first on desktop -->
+          <div class="w-full aspect-square mb-4 md:mb-0 md:order-2 rounded-box overflow-hidden">
+            <img src={testimonials[1].image} alt={testimonials[1].name} class="w-full h-full object-cover" />
+          </div>
+          <div class="text-center md:order-1 md:mb-8">
+            <div class="text-4xl mb-2">"</div>
+            <h3 class="card-title text-lg justify-center mb-2">{testimonials[1].name}</h3>
+            <p class="mb-4">{testimonials[1].quote}</p>
+            <div class="rating rating-md justify-center gap-1">
+              <input type="radio" name="rating-2" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="mask mask-star-2" checked />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="card">
+        <div class="card-body">
+          <div class="w-full aspect-square mb-4 rounded-box overflow-hidden">
+            <img src={testimonials[2].image} alt={testimonials[2].name} class="w-full h-full object-cover" />
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-2">"</div>
+            <h3 class="card-title text-lg justify-center mb-2">{testimonials[2].name}</h3>
+            <p class="mb-4">{testimonials[2].quote}</p>
+            <div class="rating rating-md justify-center gap-1">
+              <input type="radio" name="rating-3" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-3" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-3" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-3" class="mask mask-star-2" checked />
+              <input type="radio" name="rating-3" class="mask mask-star-2" checked />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

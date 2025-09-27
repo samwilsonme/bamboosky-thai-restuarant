@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  variant?: 'default' | 'centered' | 'large';
+  className?: string;
+}
+
+const { 
+  title, 
+  description, 
+  variant = 'default',
+  className = '' 
+} = Astro.props;
+---
+
+<div class={`
+  w-full pt-16 pb-8 
+  ${variant === 'centered' ? 'text-center' : ''} 
+  ${variant === 'large' ? 'mb-12' : ''} 
+  ${className}
+`}>
+  <h2 class={`
+    text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4
+    ${variant === 'large' ? 'text-4xl md:text-5xl lg:text-6xl' : ''}
+  `} style="">
+    {title}
+  </h2>
+  {description && (
+    <p class={`
+      text-lg md:text-xl text-base-content opacity-80 leading-relaxed max-w-3xl
+      ${variant === 'large' ? 'text-xl md:text-2xl' : ''}
+      ${variant === 'centered' ? 'mx-auto' : ''}
+    `} style="">
+      {description}
+    </p>
+  )}
+</div>
