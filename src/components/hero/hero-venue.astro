@@ -1,0 +1,22 @@
+---
+// Hero Contact Component
+import BookTableModal from '../modal/book_table.astro';
+import BookDomeModal from '../modal/book_dome.astro';
+---
+
+<div class="hero py-16 px-4">
+  <div class="hero-content text-center">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">A Place To Breathe,<br>Taste, And Gather</h1>
+      <p class="py-6 text-lg pb-8 leading-relaxed">
+        Nestled in the Bourn countryside, our space has been thoughtfully designed to bring you closer to nature with a wide choice of spaces for eating, drinking, and connecting in every season.
+        <br><br>
+        <i>Find your flow and discover a new favourite corner every time you visit.</i>
+      </p>
+      <div class="flex gap-4 justify-center">
+        <BookTableModal />
+        <BookDomeModal />
+      </div>
+    </div>
+  </div>
+</div>

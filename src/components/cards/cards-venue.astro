@@ -1,0 +1,159 @@
+---
+// Cards Food Component
+const theme = Astro.props.theme;
+import Heading from '../heading/heading.astro';
+
+import image1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_49_gsrsafsb.jpg';
+import image2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_5_cc6brvx8.jpg';
+import image3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_106_gvzlrr4i.jpg';
+import image4 from '../../assets/images/bamboosky-thai-restuarant-cambridge_92_zrhd6d4t.jpg';
+import image5 from '../../assets/images/bamboosky-thai-restuarant-cambridge_56_kle26xxu.jpg';
+import image6 from '../../assets/images/bamboosky-thai-restuarant-cambridge_13_hmiwmuow.jpg';
+import image7 from '../../assets/images/bamboosky-thai-restuarant-cambridge_75_koda3lxd.jpg';
+import image8 from '../../assets/images/bamboosky-thai-restuarant-cambridge_45_7bfl7c9g.jpg';
+
+const cards = [
+  {
+    name: "The Restaurant",
+    description: "A light-filled, laid-back dining room where fragrant Thai flavours meet relaxed countryside style.",
+    link: "",
+    image: image1.src
+  },
+  {
+    name: "The Bar",
+    description: "Our Botanical Brew House, serving cocktails, Thai-inspired drinks, and a curated wine and beer list.",
+    link: "",
+    image: image2.src
+  },
+  {
+    name: "The Terrace",
+    description: "Open-air tables with sweeping views, perfect for sunny afternoons and golden-hour drinks.",
+    link: "",
+    image: image3.src
+  },
+  {
+    name: "The Garden",
+    description: "A lush space for wandering, dining, and letting the senses unwind.",
+    link: "/garden",
+    image: image4.src
+  },
+  {
+    name: "The Domes",
+    description: "Seven heated dining domes for private dinners, celebrations, and special moments under the stars.",
+    link: "/domes",
+    image: image5.src
+  },
+  {
+    name: "The Tipi",
+    description: "A cosy, all-weather gathering space ideal for group feasts, small events, or a unique countryside night out.",
+    link: "/tipi",
+    image: image6.src
+  },
+  {
+    name: "The Wild Meadow",
+    description: "Our open meadow brings a touch of wilderness to Bamboo Sky, offering space for seasonal events, pop-ups, and slow afternoons surrounded by nature.",
+    image: image7.src
+  },
+  {
+    name: "Bourn Village",
+    description: "Nestled in the beautiful Cambridgeshire village of Bourn, surrounded by rolling countryside and traditional English charm.",
+    image: image8.src
+  }
+];
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+
+  <Heading 
+    title="Unique spaces to discover"
+    description="Whether you're here for a quiet midweek meal, a big family celebration, or an evening of cocktails with friends, Bamboo Sky is a place to find your flow – and maybe discover a new favourite corner every time you visit."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="cards-grid">
+      {cards.map((card, index) => (
+        <div class="card">
+          <figure class="rounded-box aspect-square overflow-hidden">
+            <img
+              src={card.image}
+              alt={card.name}
+              class="object-cover w-full h-full"
+            />
+          </figure>
+          <div class="card-body">
+            {card.link ? (
+              <h2 class="card-title uppercase">
+                <a href={card.link} class="underline">{card.name}</a>
+              </h2>
+            ) : (
+              <h2 class="card-title uppercase">{card.name}</h2>
+            )}
+            <p>{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a href="https://order.bamboosky.co.uk/" target="_blank" class="btn btn-primary uppercase w-full">Enjoy Bamboo Sky At Home - Order Takeout</a>
+
+  </div>
+</section>
+
+<style>
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Limit to maximum 4 columns on larger screens */
+  @media (min-width: 1024px) {
+    .cards-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* 3 columns on medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 2 columns on small screens */
+  @media (min-width: 480px) and (max-width: 767px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 1 column on very small screens */
+  @media (max-width: 479px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  
+  .card figure {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  
+  .card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
