@@ -1,0 +1,19 @@
+---
+// Homepage
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navbar/navbar.astro';
+import Hero from '../components/hero/hero-404.astro';
+import Footer from '../components/footer/footer.astro'
+import FloatingSocial from '../components/floating/social.astro'
+import Dock from '../components/dock/dock.astro'
+---
+
+<Layout>
+	<Navbar>
+		<Hero />
+		<Footer />
+		<FloatingSocial />
+		<Dock />
+	</Navbar>
+</Layout>
