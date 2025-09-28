@@ -1,0 +1,54 @@
+---
+// Contact Form Component
+const theme = Astro.props.theme;
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : 'bg-primary'}>
+
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    action="/thank-you"
+    class=""
+  >
+
+    <input type="hidden" name="form-name" value="contact" />
+    
+    <!-- Honeypot field for spam protection -->
+    <div class="hidden">
+      <label>Don't fill this out if you're human:
+        <input name="bot-field" />
+      </label>
+    </div>
+
+    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
+      <!--<legend class="fieldset-legend uppercase">Get in Touch</legend>-->
+
+      <h3 class="text-lg font-bold mb-4 uppercase">Get in Touch</h3>
+
+      <label class="label">Name</label>
+      <input type="text" name="name" class="input w-full" placeholder="Name" required />
+
+      <label class="label">Email</label>
+      <input type="email" name="email" class="input w-full" placeholder="Email" required />
+
+      <label class="label">Subject</label>
+      <select name="subject" class="select w-full">
+        <option disabled selected>Choose a subject</option>
+        <option>General</option>
+        <option>Reservation</option>
+        <option>Event</option>
+        <option>Wedding</option>
+      </select>
+
+      <label class="label">Message</label>
+      <textarea name="message" class="textarea w-full" placeholder="Message" required></textarea>
+
+      <button class="btn btn-neutral mt-4 uppercase">Send Message</button>
+    </fieldset>
+
+  </form>
+
+</section>

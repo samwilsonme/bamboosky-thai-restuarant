@@ -1,0 +1,71 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+import ContactForm from '../form/contact.astro'
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <div class="flex flex-col gap-2">
+
+              <div>
+                <h6 class="text-lg font-bold uppercase text-base-content mt-4">Details</h6>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>Address</td>
+                      <td class="text-right"><a href="https://maps.google.com/?q=29+High+St,+Bourn,+Cambridge+CB23+2SQ" target="_blank" rel="noopener noreferrer" class="link link-hover">29 High St, Bourn, Cambridge CB23 2SQ</a></td>
+                    </tr>
+                    <tr>
+                      <td>Telephone</td>
+                      <td class="text-right"><a href="tel:+441954719775" class="link link-hover">01954 719775</a></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td class="text-right"><a href="mailto:hello@bamboosky.co.uk" class="link link-hover">hello@bamboosky.co.uk</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h6 id="opening-hours" class="text-lg font-bold uppercase text-base-content mt-4">Opening Hours</h6>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>Monday - Tuesday</td>
+                      <td class="text-right">Closed</td>
+                    </tr>
+                    <tr>
+                      <td>Wednesday - Thursday</td>
+                      <td class="text-right">11am - 10pm</td>
+                    </tr>
+                    <tr>
+                      <td>Friday - Saturday</td>
+                      <td class="text-right">11am - 11pm</td>
+                    </tr>
+                    <tr>
+                      <td>Sunday</td>
+                      <td class="text-right">12pm - 10pm</td>
+                    </tr>
+                    <tr>
+                      <td>Kitchen Hours</td>
+                      <td class="text-right">Lunch & Dinner Service</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact-form">
+          <ContactForm theme="bamboosky-blue"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

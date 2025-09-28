@@ -92,7 +92,12 @@
         <p class="text-lg">Subscribe for exclusive updates and special offers.</p>
       </div>
       
-      <div class="join">
+      <form action="https://bamboosky.us2.list-manage.com/subscribe/post?u=b98e96b955b28d9df0e5abb62&amp;id=f8a6d3df39&amp;f_id=008293e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate join" target="_blank">
+        <!-- Hidden Mailchimp fields -->
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input type="text" name="b_b98e96b955b28d9df0e5abb62_f8a6d3df39" tabindex="-1" value="">
+        </div>
+        
         <div>
           <label class="input validator join-item lg:w-80">
             <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -107,12 +112,18 @@
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </g>
             </svg>
-            <input type="email" placeholder="mail@site.com" required />
+            <input type="email" name="EMAIL" placeholder="mail@site.com" required />
           </label>
           <div class="validator-hint hidden">Enter valid email address</div>
         </div>
-        <button class="btn btn-neutral join-item">Subscribe</button>
-      </div>
+        <button type="submit" name="subscribe" class="btn btn-neutral join-item">Subscribe</button>
+        
+        <!-- Mailchimp response messages -->
+        <!--<div id="mce-responses" class="clear" style="margin-top: 10px;">
+          <div class="response" id="mce-error-response" style="display: none; color: #e74c3c; font-size: 14px;"></div>
+          <div class="response" id="mce-success-response" style="display: none; color: #27ae60; font-size: 14px;"></div>
+        </div>-->
+      </form>
     </div>
 
     <div class="divider"></div>
@@ -123,3 +134,23 @@
 
   </div>
 </footer>
+
+<!-- Mailchimp JavaScript validation -->
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+(function($) {
+  window.fnames = new Array(); 
+  window.ftypes = new Array();
+  fnames[0]='EMAIL';
+  ftypes[0]='email';
+  fnames[1]='FNAME';
+  ftypes[1]='text';
+  fnames[2]='LNAME';
+  ftypes[2]='text';
+  fnames[3]='ADDRESS';
+  ftypes[3]='address';
+  fnames[4]='PHONE';
+  ftypes[4]='phone';
+}(jQuery));
+var $mcj = jQuery.noConflict(true);
+</script>
