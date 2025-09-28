@@ -1,0 +1,81 @@
+---
+// Dock Component
+---
+<section data-theme="bamboosky-creme">
+  <div class="dock dock-lg lg:hidden">
+    <button onclick="book_table_dock_modal.showModal()">
+      <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></rect><path d="m8,7h8m-8,4h8m-8,4h5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path></g></svg>
+      <span class="dock-label uppercase">Reserve Table</span>
+    </button>
+    
+    <a href="https://order.bamboosky.co.uk/" target="_blank" class="dock-active">
+      <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt"><path d="m3,7h18l-1,13H4L3,7Z" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><path d="m8,7V5c0-1.105.895-2,2-2h4c1.105,0,2,.895,2,2v2" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><path d="m9,11h6m-6,3h4" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path></g></svg>
+      <span class="dock-label uppercase">Order Takeout</span>
+    </a>
+    
+    <button onclick="book_dome_dock_modal.showModal()">
+      <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt"><path d="m12,2l3.09,6.26L22,9.27l-5,4.87 1.18,6.88L12,17.77l-6.18,3.25L7,14.14 2,9.27l6.91-1.01L12,2Z" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path></g></svg>
+      <span class="dock-label uppercase">Reserve Dome</span>
+    </button>
+  </div>
+</section>
+
+<!-- Reserve Table Modal -->
+<dialog id="book_table_dock_modal" class="modal">
+  <div class="modal-box relative">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 font-bold text-xl uppercase">x</button>
+    </form>
+
+    <h3 class="text-lg font-bold mb-4 uppercase">Reserve a Table</h3>
+
+    <!-- Widget container -->
+    <div id="book-table-dock-widget" class="flex justify-center items-center"></div>
+
+    <!-- Load widget assets -->
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://onsass.designmynight.com/?background-color=%23FFFFFF&primary-color=%236DA8A6&body-text-color=%23000000&outer-border-color=gray"
+    >
+
+    <script is:inline>
+      // Ensure the widget script only loads once
+      //if (!document.querySelector('script[src*="bookings-partner.min.js"]')) {
+        const script = document.createElement("script");
+        script.src = "//widgets.designmynight.com/bookings-partner.min.js";
+        script.setAttribute("dmn-booking-form", "true");
+        script.setAttribute("venue", "68483baa2394b18ed04ef5ab");
+        script.setAttribute("hide-offers", "false");
+        script.setAttribute("hide-powered-by", "false");
+        script.setAttribute("search-venues", "false");
+        script.setAttribute("monday-first", "true");
+        document.getElementById("book-table-dock-widget").appendChild(script);
+      //}
+    </script>
+  </div>
+</dialog>
+
+<!-- Reserve Dome Modal -->
+<dialog id="book_dome_dock_modal" class="modal">
+  <div class="modal-box relative">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 font-bold text-xl uppercase">x</button>
+    </form>
+
+    <h3 class="text-lg font-bold mb-4 uppercase">Reserve a Dome</h3>
+
+    <!-- Widget container -->
+    <div id="book-dome-widget" style="width: 75vw; height: 75vh; max-width: 100%;">
+      <iframe 
+        src="https://app.tablein.com/widget?restaurant_id=4265001" 
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        scrolling="yes"
+        style="border: none; border-radius: 8px;">
+      </iframe>
+    </div>
+
+  </div>
+</dialog>
