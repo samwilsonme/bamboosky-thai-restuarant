@@ -1,0 +1,80 @@
+---
+// Cards Food Component
+const theme = Astro.props.theme;
+import Heading from '../heading/heading.astro';
+
+import image1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_98_53s3jarm.jpg';
+import image2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_32_w4mu4n4z.jpg';
+import image3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_102_ucwy5x76.jpg';
+
+const cards = [
+  {
+    name: "White Elephant",
+    description: "50ml White Rhum Agricole, Lime, Thai Coconut Syrup. Shaken, Poured Over Ice",
+    image: image1.src
+  },
+  {
+    name: "Fifi-boba",
+    description: "Mango, Strawberry, Passion Fruit, Popping Boba",
+    image: image2.src
+  },
+  {
+    name: "Botanical Sky",
+    description: "Hendricks Neptunia, Cointreau, Lemongrass, Lime, Butterfly Pea Flower. Muddled Over Ice",
+    image: image3.src
+  }
+];
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+
+  <Heading 
+    title="Signature Drinks"
+    description="Discover our handcrafted beverages, each created with house-made botanical infusions and premium ingredients."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="flex flex-col gap-16 pb-8 md:flex-row">
+      {cards.map((card, index) => (
+        <div class="card">
+          <figure class="rounded-box aspect-square overflow-hidden">
+            <img
+              src={card.image}
+              alt={card.name}
+              class="object-cover w-full h-full"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">{card.name}</h2>
+            <p>{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a href="/menu" class="btn btn-primary uppercase w-full">View complete Menu</a>
+
+  </div>
+</section>
+
+<style>
+  .card {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .card figure {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  
+  .card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
