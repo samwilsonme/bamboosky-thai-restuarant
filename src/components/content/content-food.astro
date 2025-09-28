@@ -1,0 +1,43 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage from '../../assets/images/bamboosky-thai-restuarant-cambridge_63_ldqpw1wj.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              A Taste of Bamboo Sky
+            </h2>
+
+            <p class="text-lg mt-4">
+              From fragrant curries and colourful stir-fries to steaming noodle bowls and our sizzling signature specials, every dish is packed with flavour and designed to delight the senses. Classic Thai recipes get little twists to keep things fresh, fun, and full of character.
+            </p>
+            <p class="text-lg mt-4">
+              By day, we also serve lighter, brighter bites, bringing Thai street food vibes to the table - noodles, small plates, dim sum, and delicate sweets. Try the tradition of yum cha, pairing aromatic teas with baskets of dim sum, or make your occasion extra special with our Afternoon Tea: Bamboo Sky High Tea — a feast for both eyes and palate.
+            </p>
+            <p class="text-lg mt-4">
+              All of this unfolds in our countryside restaurant, <a href="/garden" class="link link-hover">gardens</a>, and <a href="/domes" class="link link-hover">domes</a>, where every meal feels like a little moment of wonder and discovery.
+            </p>
+
+            <a href="/menu" class="btn btn-primary uppercase mt-8">View the Menu</a>
+            <a href="https://cambridgefoodies.me.uk/2025/09/06/bamboo-sky-thaifood-bourn/" target="_blank" class="btn btn-outline uppercase mt-8">Cambridge Foodies Guide</a>
+          </div>
+        </div>
+
+        <div class="rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage.src}
+            class="object-cover"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

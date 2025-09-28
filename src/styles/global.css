@@ -156,3 +156,18 @@
   background-position: 0 0;
   z-index: 1;
 }
+
+/* Typography - Daisy UI compatible text sizes */
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.text-5xl.leading-relaxed {
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
