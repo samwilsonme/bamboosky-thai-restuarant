@@ -1,0 +1,43 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_105_4gux5mug.jpg';
+import welcomeImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_105_4gux5mug.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              A Magical Christmas Setting
+            </h2>
+
+            <p class="text-lg mt-4">
+              This Christmas, step into the warmth of Bamboo Sky and let the season come alive. Our cosy countryside restaurant glows with the crackle of the open log fire, the scent of fragrant Thai spices in the air, and twinkling lights that make every space feel special.
+            </p>
+            <p class="text-lg mt-4">
+              Whether you're planning an intimate dinner for two, a long-awaited friends' reunion, or a lively office party, Bamboo Sky offers the perfect backdrop for your festive celebration.
+            </p>
+            <a href="/contact#contact-form" class="btn btn-primary uppercase mt-8">Contact us about your Christmas party</a>
+          </div>
+        </div>
+
+        <div class="hover-gallery rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage1.src}
+            class="object-cover"
+            alt=""
+          />
+          <img
+            src={welcomeImage2.src}
+            class="object-cover"
+            alt=""
+          />
+      </div>
+    </div>
+  </div>
+</section>

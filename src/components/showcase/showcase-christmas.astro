@@ -1,0 +1,89 @@
+---
+// Showcase Homepage Component
+const theme = Astro.props.theme;
+
+import Heading from '../heading/heading.astro';
+
+import showcaseImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_49_gsrsafsb.jpg';
+import showcaseImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_56_kle26xxu.jpg';
+import showcaseImage3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_25_dgg4t6n1.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  
+  <Heading 
+    title="Choose Your Festive Setting" 
+    description="From intimate dinners to grand celebrations, we have the perfect space for your Christmas gathering."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Left Column - Two Small Sections -->
+      <div class="lg:col-span-1 flex flex-col justify-between gap-8 lg:h-full">
+        
+        <!-- Small Section 1 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage1.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Cosy Restaurant</h3>
+            <p class="">Relaxed, rustic charm with a roaring fire and a carefully crafted festive menu.</p>
+          </div>
+        </div>
+
+        <!-- Small Section 2 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage2.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Twinkling Domes</h3>
+            <p class="">Your own private winter wonderland under the stars, with heaters and soft lighting.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Right Column - Large Section -->
+      <div class="lg:col-span-1 lg:h-full max-w-150 max-h-180">
+        <div class="bg-base-100 overflow-hidden h-full section-bamboosky-border" data-theme="bamboosky-creme">
+          <div class="flex flex-col h-full">
+            <!-- Image on top -->
+            <div class="px-8 pt-8">
+              <img
+                src={showcaseImage3.src}
+                class="rounded-box w-full h-64 object-cover"
+                alt=""
+              />
+            </div>
+            
+            <!-- Text and button below -->
+            <div class="px-8 pb-8 flex-1 flex flex-col justify-center text-center">
+              <h2 class="text-3xl font-bold mb-4 uppercase">Private Hire</h2>
+              <p class="text-lg mb-6 leading-relaxed">
+                Make Bamboo Sky yours for the night. Ideal for larger celebrations, end-of-year parties, or unique corporate events..
+              </p>
+              
+              <!-- Button -->
+              <a href="#top" class="btn btn-primary font-semibold uppercase">
+                Contact us about your Christmas party
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
