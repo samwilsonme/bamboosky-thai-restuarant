@@ -1,0 +1,43 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_16_oyelpxkg.jpg';
+import welcomeImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_17_uq4n7d7n.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              Private domes for<br>perfect moments
+            </h2>
+
+            <p class="text-lg mt-4">
+              By day, enjoy serene views of the gardens and our majestic Willow tree. As night falls, the space transforms into a magical hideaway, glowing with twinkling fairy lights.
+            </p>
+            <p class="text-lg mt-4">
+              Each dome comes with a Bluetooth speaker for your favourite playlists and Dyson heaters to keep you warm, snug, and surrounded by atmosphere, whatever the season.
+            </p>
+            <a href="#top" class="btn btn-primary uppercase mt-8">Reserve your Dome today</a>
+          </div>
+        </div>
+
+        <div class="hover-gallery rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage1.src}
+            class="object-cover"
+            alt=""
+          />
+          <img
+            src={welcomeImage2.src}
+            class="object-cover"
+            alt=""
+          />
+      </div>
+    </div>
+  </div>
+</section>

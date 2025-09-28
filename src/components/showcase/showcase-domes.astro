@@ -1,0 +1,89 @@
+---
+// Showcase Homepage Component
+const theme = Astro.props.theme;
+
+import Heading from '../heading/heading.astro';
+
+import showcaseImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_35_sdm3zupz.jpg';
+import showcaseImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_26_b7sddu8i.jpg';
+import showcaseImage3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_117_wj6mkbsr.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  
+  <Heading 
+    title="The Diamond Dome Experience" 
+    description="For something truly extraordinary, our Super-Sized Diamond Dome seats up to 14 guests around a grand round table. Nestled amongst the domes in the Willow Garden, with views across the illuminated Willow tree and our Secret Meadow."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Left Column - Two Small Sections -->
+      <div class="lg:col-span-1 flex flex-col justify-between gap-8 lg:h-full">
+        
+        <!-- Small Section 1 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage1.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Entertainment</h3>
+            <p class="">Each dome comes with a Bluetooth speaker for your favourite playlists.</p>
+          </div>
+        </div>
+
+        <!-- Small Section 2 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage2.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Year round comfort</h3>
+            <p class="">Dyson heaters to keep you warm, snug, and surrounded by atmosphere, whatever the season.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Right Column - Large Section -->
+      <div class="lg:col-span-1 lg:h-full max-w-150 max-h-180">
+        <div class="bg-base-100 overflow-hidden h-full section-bamboosky-border" data-theme="bamboosky-creme">
+          <div class="flex flex-col h-full">
+            <!-- Image on top -->
+            <div class="px-8 pt-8">
+              <img
+                src={showcaseImage3.src}
+                class="rounded-box w-full h-64 object-cover"
+                alt=""
+              />
+            </div>
+            
+            <!-- Text and button below -->
+            <div class="px-8 pb-8 flex-1 flex flex-col justify-center text-center">
+              <h2 class="text-3xl font-bold mb-4 uppercase">The Diamond Dome</h2>
+              <p class="text-lg mb-6 leading-relaxed">
+                For something truly extraordinary, our Super-Sized Diamond Dome seats up to 14 guests around a grand round table.
+              </p>
+              
+              <!-- Button -->
+              <a href="#top" class="btn btn-primary font-semibold uppercase">
+                Book the Diamond Dome
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
