@@ -1,0 +1,63 @@
+---
+import Heading from '../heading/heading.astro';
+
+// Content Allergen Component
+const theme = Astro.props.theme;
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="pb-16">
+    <div class="container mx-auto px-4 py-8">
+      <Heading title="Allergen Information" variant="centered"/>
+      
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Important Notice Section -->
+        <div>
+          <h3 class="text-2xl font-bold uppercase mb-4 text-primary">
+            Important Notice
+          </h3>
+          <p class="text-lg leading-relaxed">
+            Please inform our staff of any allergies or dietary requirements when ordering. While we take great care to avoid cross-contamination, our kitchen handles all major allergens and we cannot guarantee that any dish is completely allergen-free.
+          </p>
+        </div>
+
+        <!-- Detailed Allergen Information Section -->
+        <div>
+          <h3 class="text-2xl font-bold uppercase mb-4 text-primary">
+            Detailed Allergen Information
+          </h3>
+          <p class="text-lg mb-6 leading-relaxed">
+            For detailed allergen information for all our menu items, please download our comprehensive allergen guide below. This document contains specific allergen information for each dish on our menu.
+          </p>
+          <div class="text-center">
+            <a href="/bamboosky-allergen-sheet-2025.pdf" target="_blank" class="btn btn-primary btn-lg uppercase">
+              View Allergen Guide
+            </a>
+            <a href="/bamboosky-allergen-sheet-2025.pdf" download="/bamboosky-allergen-sheet-2025.pdf" class="btn btn-outline btn-lg uppercase">
+              Download Allergen Guide
+            </a>
+          </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div>
+          <h3 class="text-2xl font-bold uppercase mb-4 text-primary">
+            Additional Information
+          </h3>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              If you have severe allergies or require specific dietary accommodations, please speak directly with our kitchen staff when placing your order. We're happy to discuss ingredients and preparation methods to ensure your safety and enjoyment.
+            </p>
+            <p class="text-lg leading-relaxed">
+              For any questions about allergens, please contact us at 
+              <a href="mailto:hello@bamboosky.co.uk" class="text-primary hover:underline font-semibold">
+                hello@bamboosky.co.uk
+              </a> 
+              or speak with our team when you visit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
