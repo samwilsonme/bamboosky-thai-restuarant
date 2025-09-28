@@ -1,0 +1,46 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_60_yu0jitt1.jpg';
+import welcomeImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_19_nlrxv8zz.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              Nights to Remember
+            </h2>
+
+            <p class="text-lg mt-4">
+              Bamboo Sky after dark is where the party starts. Join us for DJ Bamboogie Nights with dinner, drinks, and dancing under the stars.
+            </p>
+            <p class="text-lg mt-4">
+              Experience our legendary Bottomless Brunch with Live DJ – our weekend ritual for good vibes & good company. And don't miss our Full Moon Parties with firepits, glowing cocktails, and beats that last until late.
+            </p>
+            <p class="text-lg mt-4">
+              Whether you're here for a creative workshop, intimate live music session, or a seasonal celebration, every event at Bamboo Sky is crafted to create moments that linger in memory long after the night ends.
+            </p>
+            <a href="https://www.designmynight.com/cambridge/restaurants/bamboo-sky/" target="_blank" class="btn btn-primary uppercase mt-8">Explore our events</a>
+          </div>
+        </div>
+
+        <div class="hover-gallery rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage1.src}
+            class="object-cover"
+            alt=""
+          />
+          <img
+            src={welcomeImage2.src}
+            class="object-cover"
+            alt=""
+          />
+      </div>
+    </div>
+  </div>
+</section>

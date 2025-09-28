@@ -1,0 +1,77 @@
+---
+// Cards Food Component
+const theme = Astro.props.theme;
+import Heading from '../heading/heading.astro';
+
+import image1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_97_6wt207uj.jpg';
+import image2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_1_2g0wi1g4.jpg';
+
+const cards = [
+  {
+    name: "The Magicians Tipi",
+    description: "An Evening of Live Magic at Bamboo Sky. Step into the spellbinding world of The Magicians Tipi – an unforgettable night of magic beneath the stars.",
+    link: "https://www.designmynight.com/cambridge/restaurants/bamboo-sky/the-magicians-tipi?t=tickets",
+    image: image1.src
+  },
+  {
+    name: "Doodles & Noodles",
+    description: "Come and spend a fun evening learning mindful drawing with artist Laura J Attew, whilst sipping cocktails and feasting on delicious noodles at the fabulous Bamboo Sky in Bourn.",
+    link: "https://www.designmynight.com/cambridge/restaurants/bamboo-sky/doodles-noodles?t=tickets",
+    image: image2.src
+  }
+];
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+
+  <Heading 
+    title="Featured Events"
+    description="From creative workshops to live entertainment, discover our curated calendar of unique experiences."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="flex flex-col gap-16 pb-8 md:flex-row">
+      {cards.map((card, index) => (
+        <div class="card">
+          <figure class="rounded-box aspect-square overflow-hidden">
+            <img
+              src={card.image}
+              alt={card.name}
+              class="object-cover w-full h-full"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title uppercase">{card.name}</h2>
+            <p>{card.description}</p>
+            <div class="card-actions justify-center">
+              <a href={card.link} target="_blank" class="btn btn-primary uppercase btn-bl">Book you tickets now</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .card {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .card figure {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  
+  .card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
