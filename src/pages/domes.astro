@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Domes Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,56 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Domes Page
+const pageTitle = "Private Domes Dining Cambridge | BambooSky Magical Experience";
+const pageDescription = "Reserve your private dome at BambooSky for an unforgettable dining experience. Enjoy serene garden views by day, magical fairy lights by night, with Bluetooth speakers and Dyson heaters for comfort in every season.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_16_oyelpxkg.jpg";
+const pageKeywords = "private domes Cambridge, dome dining, private dining Cambridge, dome hire, romantic dining Cambridge, unique dining experience, fairy lights dining, Bluetooth speakers, heated domes";
+
+// Structured Data for Domes
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "EventVenue",
+	"name": "BambooSky Private Domes",
+	"description": "Private domes for intimate dining experiences with garden views, fairy lights, and climate control.",
+	"url": "https://bamboosky.co.uk/domes",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"amenityFeature": [
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Garden Views"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Fairy Lights"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Bluetooth Speakers"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Dyson Heaters"
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

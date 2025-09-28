@@ -1,5 +1,5 @@
 ---
-// Menu
+// Menu Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,42 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Menu Page
+const pageTitle = "Thai Restaurant Menu | BambooSky Food & Drinks";
+const pageDescription = "Explore our authentic Thai restaurant menu at BambooSky. Download our food menu and drinks menu featuring traditional Thai cuisine, cocktails, boba teas, and specialty beverages in Cambridge.";
+const pageImage = "/bamboosky-food-menu.pdf";
+const pageKeywords = "Thai menu Cambridge, BambooSky menu, Thai food menu, restaurant menu Cambridge, Thai cuisine menu, food menu download, drinks menu Cambridge";
+
+// Structured Data for Menu
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Menu",
+	"name": "BambooSky Thai Restaurant Menu",
+	"description": "Complete menu featuring authentic Thai cuisine, cocktails, and specialty beverages.",
+	"url": "https://bamboosky.co.uk/menu",
+	"provider": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

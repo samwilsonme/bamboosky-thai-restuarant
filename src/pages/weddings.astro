@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Weddings Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,61 @@ import Testimonials from '../components/testimonials/testimonials-weddings.astro
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Weddings Page
+const pageTitle = "Wedding Venue Cambridge | BambooSky Countryside Weddings";
+const pageDescription = "Create your dream wedding at BambooSky. From countryside gatherings to romantic garden ceremonies and lively celebrations. Expert team, flexible options, and magical settings including domes, tipi, and gardens.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_108_pmarojax.jpg";
+const pageKeywords = "wedding venue Cambridge, countryside wedding, garden wedding, wedding venue Bourn, wedding venue Cambridgeshire, tipi wedding, domes wedding, outdoor wedding, wedding catering, wedding packages";
+
+// Structured Data for Wedding Venue
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "EventVenue",
+	"name": "BambooSky Wedding Venue",
+	"description": "Unique countryside wedding venue with domes, tipi, and beautiful gardens for your perfect day.",
+	"url": "https://bamboosky.co.uk/weddings",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "52.1881",
+		"longitude": "0.0287"
+	},
+	"amenityFeature": [
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Garden Ceremony Space"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Tipi Venue"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Private Domes"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Thai Catering"
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

@@ -1,5 +1,5 @@
 ---
-// Contact
+// Contact Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -9,9 +9,44 @@ import Social from '../components/social/social.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Contact Page
+const pageTitle = "Contact BambooSky Thai Restaurant | Book Your Table";
+const pageDescription = "Contact BambooSky Thai Restaurant in Bourn, Cambridge. Call 01954 719775, email hello@bamboosky.co.uk, or visit us at 29 High St, Bourn CB23 2SQ. Open Wednesday-Sunday.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_5_cc6brvx8.jpg";
+const pageKeywords = "contact BambooSky, book table Cambridge, restaurant booking, BambooSky phone number, restaurant address Cambridge, opening hours, Thai restaurant contact";
+
+// Structured Data for Contact
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "ContactPage",
+	"name": "Contact BambooSky Thai Restaurant",
+	"description": "Get in touch with BambooSky Thai Restaurant for bookings, inquiries, and reservations.",
+	"url": "https://bamboosky.co.uk/contact",
+	"mainEntity": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"telephone": "+441954719775",
+		"email": "hello@bamboosky.co.uk",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

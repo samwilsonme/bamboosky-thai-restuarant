@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Tipi Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,56 @@ import Testimonials from '../components/testimonials/testimonials-tipi.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Tipi Page
+const pageTitle = "Tipi Venue Cambridge | BambooSky Magical Event Space";
+const pageDescription = "Experience our magical Tipi venue with fairy lights, central firepit, and sweeping views of Bourn's countryside. Perfect for weddings, private parties, and celebrations that deserve something extraordinary.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_57_o7rub8wn.jpg";
+const pageKeywords = "tipi venue Cambridge, tipi wedding, tipi hire Cambridge, outdoor venue Cambridge, fairy lights venue, firepit venue, countryside venue, magical venue, tipi party venue";
+
+// Structured Data for Tipi
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "EventVenue",
+	"name": "BambooSky Tipi Venue",
+	"description": "Magical tipi venue with fairy lights, central firepit, and countryside views for unforgettable celebrations.",
+	"url": "https://bamboosky.co.uk/tipi",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"amenityFeature": [
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Central Firepit"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Fairy Lights"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Countryside Views"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Rustic Charm"
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Allergens Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -7,9 +7,20 @@ import Content from '../components/content/content-allergens.astro';
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Allergens Page
+const pageTitle = "Allergen Information | BambooSky Thai Restaurant";
+const pageDescription = "View our comprehensive allergen information and dietary requirements at BambooSky Thai Restaurant. Download our allergen sheet to ensure safe dining for all guests with food allergies.";
+const pageImage = "/bamboosky-allergen-sheet-2025.pdf";
+const pageKeywords = "allergen information, food allergies, dietary requirements, allergen sheet, Thai food allergens, restaurant allergens, food safety, allergy information";
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+>
 	<Navbar>
 		<Content />
 		<Footer />

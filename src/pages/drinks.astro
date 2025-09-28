@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Drinks Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,74 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Drinks Page
+const pageTitle = "Cocktails, Boba Tea & Craft Drinks | BambooSky Cambridge";
+const pageDescription = "Discover our liquid journey at BambooSky. From playful boba bubble teas and delicate flowering teas to craft beers, wines, and botanical soft drinks. Perfect drinks for every occasion.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_9_3k945kdn.jpg";
+const pageKeywords = "cocktails Cambridge, boba tea Cambridge, bubble tea, flowering tea, craft beer Cambridge, wine bar, botanical drinks, non-alcoholic drinks, specialty coffee, champagne, drinks menu Cambridge";
+
+// Structured Data for Drinks/Menu
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Menu",
+	"name": "BambooSky Drinks Menu",
+	"description": "A curated selection of cocktails, boba teas, craft beers, wines, and specialty drinks.",
+	"url": "https://bamboosky.co.uk/drinks",
+	"hasMenuSection": [
+		{
+			"@type": "MenuSection",
+			"name": "Boba Bubble Teas",
+			"description": "Playful and refreshing bubble teas"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Flowering Teas",
+			"description": "Delicate and aromatic flowering teas"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Specialty Coffee",
+			"description": "World-class coffee selections"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Craft Beers",
+			"description": "Curated selection of craft and zero beers"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Wines & Champagne",
+			"description": "Fine wines and sparkling champagnes"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Botanical Softs",
+			"description": "Refreshing non-alcoholic botanical drinks"
+		}
+	],
+	"provider": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

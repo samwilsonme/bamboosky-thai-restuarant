@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Venue Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -9,9 +9,56 @@ import Social from '../components/social/social.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Venue Page
+const pageTitle = "Venue Hire Cambridge | BambooSky Restaurant Spaces";
+const pageDescription = "Discover our unique venue spaces at BambooSky. From intimate dining areas to large event spaces, featuring domes, tipi, gardens, and countryside charm. Perfect for private dining, corporate events, and special celebrations.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_5_cc6brvx8.jpg";
+const pageKeywords = "venue hire Cambridge, private dining Cambridge, corporate events Cambridge, venue hire Bourn, private restaurant hire, event space Cambridge, party venue, function room Cambridge";
+
+// Structured Data for Venue
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "EventVenue",
+	"name": "BambooSky Venue Spaces",
+	"description": "Unique countryside venue with multiple spaces for private dining, events, and celebrations.",
+	"url": "https://bamboosky.co.uk/venue",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"amenityFeature": [
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Private Domes"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Tipi Venue"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Garden Spaces"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Restaurant Dining"
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Cards theme="bamboosky-creme"/>

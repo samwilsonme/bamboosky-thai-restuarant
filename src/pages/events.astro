@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Events Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,46 @@ import Social from '../components/social/social.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Events Page
+const pageTitle = "Events & Live Music | BambooSky Cambridge Restaurant";
+const pageDescription = "Join us for unforgettable nights at BambooSky. DJ Bamboogie Nights, Bottomless Brunch with Live DJ, Full Moon Parties, creative workshops, and intimate live music sessions in our magical countryside setting.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_60_yu0jitt1.jpg";
+const pageKeywords = "events Cambridge, live music Cambridge, DJ nights, bottomless brunch Cambridge, full moon parties, creative workshops, night events, party venue Cambridge, live DJ, events venue Bourn";
+
+// Structured Data for Events
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Event",
+	"name": "BambooSky Events & Entertainment",
+	"description": "Regular events including DJ nights, bottomless brunch, full moon parties, and live music sessions.",
+	"url": "https://bamboosky.co.uk/events",
+	"location": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	},
+	"organizer": {
+		"@type": "Organization",
+		"name": "BambooSky Thai Restaurant"
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<CardsFeatured theme="bamboosky-creme"/>

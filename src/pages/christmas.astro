@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Christmas Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,46 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Christmas Page
+const pageTitle = "Christmas Parties Cambridge | BambooSky Festive Dining";
+const pageDescription = "Celebrate Christmas at BambooSky with our magical festive setting. Cosy countryside restaurant with open log fire, fragrant Thai spices, twinkling lights, and perfect for intimate dinners, friends' reunions, or office parties.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_105_4gux5mug.jpg";
+const pageKeywords = "Christmas party Cambridge, festive dining Cambridge, Christmas restaurant, office Christmas party, Christmas dinner Cambridge, festive venue Cambridge, Christmas celebration";
+
+// Structured Data for Christmas Events
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Event",
+	"name": "BambooSky Christmas Celebrations",
+	"description": "Magical Christmas setting with open log fire, fragrant Thai spices, and twinkling lights for festive celebrations.",
+	"url": "https://bamboosky.co.uk/christmas",
+	"location": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	},
+	"organizer": {
+		"@type": "Organization",
+		"name": "BambooSky Thai Restaurant"
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

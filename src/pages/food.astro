@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Food Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,69 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Food Page
+const pageTitle = "Authentic Thai Food & Cuisine | BambooSky Restaurant Cambridge";
+const pageDescription = "Discover authentic Thai cuisine at BambooSky. From fragrant curries and colorful stir-fries to steaming noodle bowls and signature specials. Experience Thai street food, dim sum, and our famous Bamboo Sky High Tea.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_63_ldqpw1wj.jpg";
+const pageKeywords = "Thai food Cambridge, authentic Thai cuisine, Thai curries, Thai stir fry, Thai noodles, dim sum Cambridge, Thai street food, high tea Cambridge, Thai restaurant Bourn, pad thai, tom yum, green curry, Thai menu";
+
+// Structured Data for Menu/Food
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Menu",
+	"name": "BambooSky Thai Restaurant Menu",
+	"description": "Authentic Thai cuisine featuring fragrant curries, colorful stir-fries, steaming noodle bowls, and signature specials.",
+	"url": "https://bamboosky.co.uk/food",
+	"hasMenuSection": [
+		{
+			"@type": "MenuSection",
+			"name": "Thai Curries",
+			"description": "Fragrant and flavorful Thai curries"
+		},
+		{
+			"@type": "MenuSection", 
+			"name": "Stir Fries",
+			"description": "Colorful and fresh Thai stir-fried dishes"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Noodle Dishes",
+			"description": "Steaming bowls of authentic Thai noodles"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Dim Sum & Street Food",
+			"description": "Traditional Thai street food and dim sum"
+		},
+		{
+			"@type": "MenuSection",
+			"name": "Bamboo Sky High Tea",
+			"description": "Special afternoon tea experience"
+		}
+	],
+	"provider": {
+		"@type": "Restaurant",
+		"name": "BambooSky Thai Restaurant",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "29 High St",
+			"addressLocality": "Bourn",
+			"addressRegion": "Cambridgeshire",
+			"postalCode": "CB23 2SQ",
+			"addressCountry": "GB"
+		}
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

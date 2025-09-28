@@ -1,5 +1,5 @@
 ---
-// Homepage
+// Garden Page
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar/navbar.astro';
@@ -11,9 +11,56 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Garden Page
+const pageTitle = "Countryside Garden Dining | BambooSky Cambridge";
+const pageDescription = "Experience dining in our magical countryside garden featuring a majestic Willow tree, dappled shade dining, raised deck, and family-friendly spaces. As featured in The Sunday Times (March 2023).";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_2_ymnvqz65.jpg";
+const pageKeywords = "garden dining Cambridge, countryside garden, willow tree dining, outdoor dining Cambridge, garden restaurant, family friendly garden, deck dining, garden venue Cambridge";
+
+// Structured Data for Garden
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Place",
+	"name": "BambooSky Garden",
+	"description": "Magical countryside garden with majestic Willow tree, perfect for outdoor dining and family gatherings.",
+	"url": "https://bamboosky.co.uk/garden",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"amenityFeature": [
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Willow Tree Canopy"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Raised Deck"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Family Play Area"
+		},
+		{
+			"@type": "LocationFeatureSpecification",
+			"name": "Tree Swing"
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>

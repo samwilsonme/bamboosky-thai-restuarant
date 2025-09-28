@@ -11,9 +11,95 @@ import Testimonials from '../components/testimonials/testimonials.astro'
 import Footer from '../components/footer/footer.astro'
 import FloatingSocial from '../components/floating/social.astro'
 import Dock from '../components/dock/dock.astro'
+
+// SEO Metadata for Homepage
+const pageTitle = "BambooSky Thai Restaurant | Authentic Thai Cuisine in Cambridge";
+const pageDescription = "Experience authentic Thai cuisine at BambooSky, a unique countryside restaurant in Bourn, Cambridge. Featuring magical domes, tipi venues, beautiful gardens, and unforgettable dining experiences.";
+const pageImage = "/bamboosky-thai-restuarant-cambridge_5_cc6brvx8.jpg";
+const pageKeywords = "Thai restaurant Cambridge, Bourn Thai food, authentic Thai cuisine, domes dining Cambridge, tipi venue, garden restaurant, countryside dining, Thai food Cambridgeshire, wedding venue Cambridge, events venue, bottomless brunch Cambridge";
+
+// Structured Data for Local Business
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Restaurant",
+	"name": "BambooSky Thai Restaurant",
+	"description": "Authentic Thai cuisine in a unique countryside setting with magical domes, tipi venues, and beautiful gardens.",
+	"url": "https://bamboosky.co.uk",
+	"telephone": "+441954719775",
+	"email": "hello@bamboosky.co.uk",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "29 High St",
+		"addressLocality": "Bourn",
+		"addressRegion": "Cambridgeshire",
+		"postalCode": "CB23 2SQ",
+		"addressCountry": "GB"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "52.1881",
+		"longitude": "0.0287"
+	},
+	"openingHoursSpecification": [
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Monday", "Tuesday"],
+			"opens": "",
+			"closes": "",
+			"validFrom": "2024-01-01",
+			"validThrough": "2024-12-31"
+		},
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Wednesday", "Thursday"],
+			"opens": "11:00",
+			"closes": "22:00",
+			"validFrom": "2024-01-01",
+			"validThrough": "2024-12-31"
+		},
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "23:00",
+			"validFrom": "2024-01-01",
+			"validThrough": "2024-12-31"
+		},
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": "Sunday",
+			"opens": "12:00",
+			"closes": "22:00",
+			"validFrom": "2024-01-01",
+			"validThrough": "2024-12-31"
+		}
+	],
+	"servesCuisine": "Thai",
+	"priceRange": "££",
+	"image": [
+		"https://bamboosky.co.uk/bamboosky-thai-restuarant-cambridge_5_cc6brvx8.jpg",
+		"https://bamboosky.co.uk/bamboosky-thai-restuarant-cambridge_45_7bfl7c9g.jpg"
+	],
+	"hasMap": "https://maps.google.com/?q=29+High+St,+Bourn,+Cambridge+CB23+2SQ",
+	"sameAs": [
+		"https://www.facebook.com/bambooskyuk",
+		"https://www.instagram.com/bambooskyuk"
+	],
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.8",
+		"reviewCount": "150"
+	}
+};
 ---
 
-<Layout>
+<Layout 
+	title={pageTitle}
+	description={pageDescription}
+	image={pageImage}
+	keywords={pageKeywords}
+	structuredData={structuredData}
+>
 	<Navbar>
 		<Hero />
 		<Content theme="bamboosky-creme"/>
