@@ -1,0 +1,45 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_57_o7rub8wn.jpg';
+import welcomeImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_51_eid79cku.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              A magical backdrop for unforgettable moments
+            </h2>
+
+            <p class="text-lg mt-4">
+              As the sun sets, the space comes alive with the glow of fairy lights and the warmth of a central firepit.
+            </p>
+            <p class="text-lg mt-4">
+              With its rustic charm and sweeping views of Bourn's wide open skies, the Tipi is more than a venue—it's an experience.
+            </p>
+            <p class="text-lg mt-4">
+              Whether you're planning a wedding, a private party, or a celebration that deserves something extraordinary, the Tipi offers a magical backdrop where memories are made.
+            </p>
+          </div>
+        </div>
+
+        <div class="hover-gallery rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage1.src}
+            class="object-cover"
+            alt=""
+          />
+          <img
+            src={welcomeImage2.src}
+            class="object-cover"
+            alt=""
+          />
+      </div>
+    </div>
+  </div>
+</section>
