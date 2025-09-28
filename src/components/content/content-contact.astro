@@ -34,26 +34,38 @@ import ContactForm from '../form/contact.astro'
               <div>
                 <h6 id="opening-hours" class="text-lg font-bold uppercase text-base-content mt-4">Opening Hours</h6>
                 <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Day</th>
+                      <th class="text-right">Opening Hours</th>
+                      <th class="text-right">Kitchen Hours</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     <tr>
                       <td>Monday - Tuesday</td>
+                      <td class="text-right">Closed</td>
                       <td class="text-right">Closed</td>
                     </tr>
                     <tr>
                       <td>Wednesday - Thursday</td>
                       <td class="text-right">11am - 10pm</td>
+                      <td class="text-right"> 12pm - 2.30pm<br>5pm - 9pm</td>
                     </tr>
                     <tr>
-                      <td>Friday - Saturday</td>
+                      <td>Friday</td>
                       <td class="text-right">11am - 11pm</td>
+                      <td class="text-right"> 12pm - 2.30pm<br>5pm - 10pm</td>
+                    </tr>
+                    <tr>
+                      <td>Saturday</td>
+                      <td class="text-right">11am - 11pm</td>
+                      <td class="text-right"> 12pm - 4pm<br>5pm - 10pm</td>
                     </tr>
                     <tr>
                       <td>Sunday</td>
                       <td class="text-right">12pm - 10pm</td>
-                    </tr>
-                    <tr>
-                      <td>Kitchen Hours</td>
-                      <td class="text-right">Lunch & Dinner Service</td>
+                      <td class="text-right"> 12pm - 4pm<br>5pm - 10pm</td>
                     </tr>
                   </tbody>
                 </table>
