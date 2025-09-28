@@ -1,0 +1,21 @@
+---
+// Hero Contact Component
+import BookTableModal from '../modal/book_table.astro';
+---
+
+<div class="hero py-16 px-4">
+  <div class="hero-content text-center">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Thank You!</h1>
+      <p class="py-6 text-lg pb-8 leading-relaxed">
+        Your message has been successfully sent to Bamboo Sky. We appreciate you reaching out and will get back to you as soon as possible.
+        <br><br>
+        <i>Thank you for choosing Bamboo Sky Thai Restaurant.</i>
+      </p>
+      <div class="flex gap-4 justify-center">
+        <BookTableModal />
+        <a href="https://order.bamboosky.co.uk/" target="_blank" class="btn btn-lg btn-outline uppercase">Order Takeout</a>
+      </div>
+    </div>
+  </div>
+</div>
