@@ -1,22 +1,43 @@
 ---
 // Hero Contact Component
 import BookTableModal from '../modal/book_table.astro';
+
+import video from '../../assets/videos/bamboosky-food.mp4';
 ---
 
 <div class="hero py-16 px-4">
-  <div class="hero-content text-center">
-    <div class="mx-auto max-w-3xl">
-      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Flavour.<br>Fragrance.<br>Flow.</h1>
-      <p class="py-6 text-lg pb-8 leading-relaxed">
-        At Bamboo Sky, food is at the heart of the experience.
-        <br>
-        Our talented team of Thai chefs bring generations of skill and passion to the table, serving exquisite Thai cuisine alongside a hand-picked selection of Pan-Asian favourites.
-        <br><br>
-        <i>Every dish is crafted with authenticity, balance, and a touch of creativity.</i>
-      </p>
-      <div class="flex gap-4 justify-center">
-        <BookTableModal />
-        <a href="/menu" class="btn btn-lg btn-outline uppercase">View our menu</a>
+  <div class="hero-content">
+    <div class="flex flex-col lg:flex-row items-center gap-8">
+      <!-- Text content - 2/3 width -->
+      <div class="lg:w-3/4 text-center lg:text-left">
+        <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Flavour.<br>Fragrance.<br>Flow.</h1>
+        <p class="py-6 text-lg pb-8 leading-relaxed">
+          At Bamboo Sky, food is at the heart of the experience.
+          <br>
+          Our talented team of Thai chefs bring generations of skill and passion to the table, serving exquisite Thai cuisine alongside a hand-picked selection of Pan-Asian favourites.
+          <br><br>
+          <i>Every dish is crafted with authenticity, balance, and a touch of creativity.</i>
+        </p>
+        <div class="flex gap-4 justify-center lg:justify-start">
+          <BookTableModal />
+          <a href="/menu" class="btn btn-lg btn-outline uppercase">View our menu</a>
+        </div>
+      </div>
+
+      <!-- Video content - 1/3 width -->
+      <div class="lg:w-1/4 w-full max-w-md">
+        <video 
+          class="w-full h-1/2 object-cover rounded-lg shadow-lg" 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          webkit-playsinline
+          x5-playsinline
+          preload="auto"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
       </div>
     </div>
   </div>
