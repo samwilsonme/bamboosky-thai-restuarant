@@ -1,0 +1,25 @@
+---
+// Menu
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navbar/navbar.astro';
+import Hero from '../components/hero/hero-menu.astro';
+import Content from '../components/content/content-menu.astro';
+import Showcase from '../components/showcase/showcase-homepage.astro'
+import Social from '../components/social/social.astro'
+import Testimonials from '../components/testimonials/testimonials.astro'
+import Footer from '../components/footer/footer.astro'
+import FloatingSocial from '../components/floating/social.astro'
+import Dock from '../components/dock/dock.astro'
+---
+
+<Layout>
+	<Navbar>
+		<Hero />
+		<Content theme="bamboosky-creme"/>
+		<Social />
+		<Footer />
+		<FloatingSocial />
+		<Dock />
+	</Navbar>
+</Layout>

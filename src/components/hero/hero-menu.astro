@@ -1,21 +1,20 @@
 ---
 // Hero Contact Component
+import BookTableModal from '../modal/book_table.astro';
 ---
 
 <div class="hero py-16 px-4">
   <div class="hero-content text-center">
     <div class="mx-auto max-w-3xl">
-      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Get in touch with<br>Bamboo Sky</h1>
+      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Flavour & Flow</h1>
       <p class="py-6 text-lg pb-8 leading-relaxed">
-        We're a unique countryside restaurant and venue nestled in the beautiful Cambridgeshire village of Bourn.
-        <br>
-        Our space has been thoughtfully designed to bring you closer to nature, offering a wide choice of spaces for eating, drinking, and connecting in every season.
+        Fragrant curries, sizzling stir-fries, and fresh, zesty plates — all crafted with seasonal ingredients and a little Bamboo Sky magic. From light street-food lunches to full on Thai feasts, ‘Sky High’ Afternoon Tea and party-ready seasonal menus — our kitchen is your ticket to Thailand.
         <br><br>
-        <i>Whether you're planning a visit, booking an event, or just want to say hello - we'd love to hear from you.</i>
+        <i>Experience flavour that lifts you sky high here at Bamboo Sky.</i>
       </p>
       <div class="flex gap-4 justify-center">
-        <a href="#contact-form" class="btn btn-lg btn-primary uppercase">Send a message</a>
-        <a href="#opening-hours" class="btn btn-lg btn-outline uppercase">View opening hours</a>
+        <BookTableModal />
+        <a href="https://order.bamboosky.co.uk/" target="_blank" class="btn btn-lg btn-outline uppercase">Order Takeout</a>
       </div>
     </div>
   </div>

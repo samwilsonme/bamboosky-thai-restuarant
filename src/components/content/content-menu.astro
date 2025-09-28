@@ -1,0 +1,64 @@
+---
+// Content Menu Component
+const theme = Astro.props.theme;
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+        <!-- Left Column: Food Menu and Drinks Menu -->
+        <div class="space-y-8">
+          <!-- Food Menu Section -->
+          <div>
+            <h2 class="text-3xl font-bold uppercase mb-4">
+              Food Menu
+            </h2>
+            <p class="text-lg mb-6">
+              Explore our delicious selection of dishes, from light bites to hearty meals.
+            </p>
+            <div class="flex gap-4">
+              <a href="/bamboosky-food-menu.pdf" target="_blank"class="btn btn-primary uppercase">View Menu</a>
+              <a href="/bamboosky-food-menu.pdf" download="/bamboosky-food-menu.pdf" class="btn btn-outline uppercase">Download Menu</a>
+            </div>
+          </div>
+
+          <!-- Drinks Menu Section -->
+          <div>
+            <h2 class="text-3xl font-bold uppercase mb-4">
+              Drinks Menu
+            </h2>
+            <p class="text-lg mb-6">
+              Discover our carefully curated selection of drinks, cocktails, and beverages.
+            </p>
+            <div class="flex gap-4">
+              <a href="/bamboosky-drinks-menu.pdf" target="_blank" class="btn btn-primary uppercase">View Menu</a>
+              <a href="/bamboosky-drinks-menu.pdf" download="/bamboosky-drinks-menu.pdf" class="btn btn-outline uppercase">Download Menu</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: About Our Menus -->
+        <div>
+          <h2 class="text-3xl font-bold uppercase mb-6">
+            About our menus
+          </h2>
+          <div class="space-y-4">
+            <p class="text-lg">
+              At Bamboo Sky, we take pride in offering a diverse and thoughtfully crafted menu that caters to all tastes and dietary requirements. 
+            </p>
+            <p class="text-lg">
+              Our chefs use locally sourced ingredients whenever possible to create dishes that combine traditional flavors with modern creativity.
+            </p>
+            <p class="text-lg">
+              Our drinks menu features an extensive selection of cocktails, wines, and non-alcoholic beverages, carefully chosen to complement our food offerings and enhance your dining experience.
+            </p>
+            <p class="text-sm italic mt-6">
+              <i>Please note that our menus may vary slightly depending on seasonal availability.</i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
