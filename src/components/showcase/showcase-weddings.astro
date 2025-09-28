@@ -1,0 +1,89 @@
+---
+// Showcase Homepage Component
+const theme = Astro.props.theme;
+
+import Heading from '../heading/heading.astro';
+
+import showcaseImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_49_gsrsafsb.jpg';
+import showcaseImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_92_zrhd6d4t.jpg';
+import showcaseImage3 from '../../assets/images/bamboosky-thai-restuarant-cambridge_95_oesh6yiu.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  
+  <Heading 
+    title="Your Perfect Wedding Venue" 
+    description="Our venue offers a collection of unique spaces for your celebration. Every detail is tailored around you."
+    variant="centered"
+  />
+
+  <div class="container mx-auto px-4 py-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Left Column - Two Small Sections -->
+      <div class="lg:col-span-1 flex flex-col justify-between gap-8 lg:h-full">
+        
+        <!-- Small Section 1 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage1.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Restaurant & Bar</h3>
+            <p class="">An elegant & uplifting restaurant & bar space.</p>
+          </div>
+        </div>
+
+        <!-- Small Section 2 -->
+        <div class="flex flex-col sm:flex-row lg:flex-1 items-center">
+          <div class="sm:w-1/2">
+            <img
+              src={showcaseImage2.src}
+              class="rounded-box w-full aspect-square object-cover"
+              alt=""
+            />
+          </div>
+          <div class="sm:w-1/2 p-6 flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Willow Garden</h3>
+            <p class="">The stunning Willow garden, complete with our majestic tree and twinkling dining domes.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Right Column - Large Section -->
+      <div class="lg:col-span-1 lg:h-full max-w-150 max-h-180">
+        <div class="bg-base-100 overflow-hidden h-full section-bamboosky-border" data-theme="bamboosky-creme">
+          <div class="flex flex-col h-full">
+            <!-- Image on top -->
+            <div class="px-8 pt-8">
+              <img
+                src={showcaseImage3.src}
+                class="rounded-box w-full h-64 object-cover"
+                alt=""
+              />
+            </div>
+            
+            <!-- Text and button below -->
+            <div class="px-8 pb-8 flex-1 flex flex-col justify-center text-center">
+              <h2 class="text-3xl font-bold mb-4 uppercase">Wild Meadow and Tipi</h2>
+              <p class="text-lg mb-6 leading-relaxed">
+                A wild meadow with a grand Tipi and rustic horsebox bar, surrounded by beautiful countryside views under wide open skies.
+              </p>
+              
+              <!-- Button -->
+              <a href="/contact#contact-form" class="btn btn-primary font-semibold uppercase">
+                Contact us about your wedding
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
