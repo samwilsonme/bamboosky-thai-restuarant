@@ -1,0 +1,45 @@
+---
+// Content Homepage Component
+const theme = Astro.props.theme;
+
+import welcomeImage1 from '../../assets/images/bamboosky-thai-restuarant-cambridge_2_ymnvqz65.jpg';
+import welcomeImage2 from '../../assets/images/bamboosky-thai-restuarant-cambridge_92_zrhd6d4t.jpg';
+---
+
+<section data-theme={theme} class={theme === 'bamboosky-creme' ? 'bamboosky-border' : ''}>
+  <div class="py-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-prose md:max-w-none">
+            <h2 class="text-3xl font-bold uppercase">
+              A countryside garden with a touch of magic
+            </h2>
+
+            <p class="text-lg mt-4">
+              As featured in The Sunday Times (March 2023), The garden sits at the heart of Bamboo Sky's outdoor space. At its centre stands our majestic Willow tree—a natural landmark that transforms the garden into something truly special, especially when dining in our <a href="/domes" class="link link-hover">magical domes</a>.
+            </p>
+            <p class="text-lg mt-4">
+              In the warmer months, tables are set beneath the Willow's canopy, offering dappled shade and a peaceful retreat. For those chasing the sun, our raised deck and garden deck chairs provide the perfect spot to linger with a drink in hand.
+            </p>
+            <p class="text-lg mt-4">
+              This is a space for everyone: a relaxed setting for dining, a family-friendly garden with a play area tucked away in the Secret Meadow, and a touch of romance with our double tree swing—loved by couples, children, and the young-at-heart alike.
+            </p>
+          </div>
+        </div>
+
+        <div class="hover-gallery rounded-box aspect-square overflow-hidden">
+          <img
+            src={welcomeImage1.src}
+            class="object-cover"
+            alt=""
+          />
+          <img
+            src={welcomeImage2.src}
+            class="object-cover"
+            alt=""
+          />
+      </div>
+    </div>
+  </div>
+</section>

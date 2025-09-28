@@ -1,0 +1,22 @@
+---
+// Hero Contact Component
+import BookTableModal from '../modal/book_table.astro';
+import BookDomeModal from '../modal/book_dome.astro';
+---
+
+<div class="hero py-16 px-4">
+  <div class="hero-content text-center">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-5xl font-bold mb-6 uppercase leading-relaxed">Nature.<br>Wonder.<br>Escape.</h1>
+      <p class="py-6 text-lg pb-8 leading-relaxed">
+        Step into the countryside with a touch of magic. Our award-winning outdoor space, featured in The Sunday Times, is where nature and wonder meet beneath our majestic Willow tree.
+        <br><br>
+        <i>From sun-dappled dining to secret meadow adventures, discover your perfect spot in the garden.</i>
+      </p>
+      <div class="flex gap-4 justify-center">
+        <BookTableModal />
+        <BookDomeModal />
+      </div>
+    </div>
+  </div>
+</div>
