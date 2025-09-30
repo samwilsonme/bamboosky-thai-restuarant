@@ -10,7 +10,6 @@ const theme = Astro.props.theme;
     method="POST"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
-    action="/thank-you/"
     class=""
   >
 
@@ -50,6 +49,33 @@ const theme = Astro.props.theme;
       <button class="btn btn-neutral mt-4 uppercase">Send Message</button>
     </fieldset>
 
+    <!-- Success message (hidden by default) -->
+    <div id="success-message" class="alert alert-success mt-4 hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <span>Thank you for your message! We'll get back to you soon.</span>
+    </div>
+
   </form>
 
 </section>
+
+<script>
+  // Handle form submission
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="contact"]') as HTMLFormElement;
+    const successMessage = document.getElementById('success-message');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        // Let Netlify handle the form submission
+        // Show success message after a short delay
+        setTimeout(() => {
+          if (successMessage) {
+            successMessage.classList.remove('hidden');
+            form.style.display = 'none';
+          }
+        }, 1000);
+      });
+    }
+  });
+</script>
