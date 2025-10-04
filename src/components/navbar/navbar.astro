@@ -17,8 +17,33 @@
             <li><a href="/food" class="btn btn-ghost">Food</a></li>
             <li><a href="/drinks" class="btn btn-ghost">Drink</a></li>
             <li><a href="/domes" class="btn btn-ghost">Domes</a></li>
-            <li><a href="/venue" class="btn btn-ghost">Venue</a></li>
-            <li><a href="/events" class="btn btn-ghost">Events</a></li>
+            <li class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost uppercase">
+                Venue
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </div>
+              <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="/venue">Overview</a></li>
+                <li><a href="/domes">Domes</a></li>
+                <li><a href="/garden">Garden</a></li>
+                <li><a href="/tipi">Tipi</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost uppercase">
+                Events
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </div>
+              <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="/events">Overview</a></li>
+                <li><a href="/events#featured">Upcomming</a></li>
+                <li><a href="/weddings">Weddings</a></li>
+              </ul>
+            </li>
             <li><a href="/christmas" class="btn btn-ghost">Christmas</a></li>
             <li><a href="/contact" class="btn btn-ghost">Contact</a></li>
             <li><a href="https://order.bamboosky.co.uk" target="_blank" class="btn btn-primary">Order Takeout</a></li>
@@ -58,6 +83,7 @@
       <li><a href="/domes">Domes</a></li>
       <li><a href="/venue">Venue</a></li>
       <li><a href="/events">Events</a></li>
+      <li><a href="/weddings">Weddings</a></li>
       <li><a href="/christmas">Christmas</a></li>
       <li><a href="/contact">Contact</a></li>
       <li><a href="https://order.bamboosky.co.uk" target="_blank" class="btn btn-primary">Order Takeout</a></li>
